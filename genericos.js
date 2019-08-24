@@ -13,3 +13,19 @@ function echo(arg) {
 var a = echo("aaa");
 var t = echo({ length: 2, name: "aa" });
 //let b = echo(1);
+function copyFields(source, target) {
+    for (var id in source) {
+        if (target[id] != undefined) {
+            source[id] = target[id];
+        }
+        else {
+            target[id] = source[id];
+        }
+    }
+    return target;
+}
+var a = { a: 1, b: 2, c: 3 };
+var b = copyFields(a, { b: 10, c: 20 });
+var c = copyFields(a, { Q: 20 });
+console.log(b);
+console.log(c);
