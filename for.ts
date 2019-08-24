@@ -1,4 +1,10 @@
-let list = {a:1,b:2,c:3};
-for(let i in list){
-    console.log(i);
+let list = ["a", "b", "c"];
+for(let b of list){
+    console.log(b);
+}
+
+
+let string = "is it me you're looking for?";
+for (let char of string){
+    console.log(char);
 }
