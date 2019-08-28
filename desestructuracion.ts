@@ -9,3 +9,7 @@ console.log(array[0]);
 
 var [x, y, z] = array;
 console.log(x);
+
+var arrai = [1, 2, 3, 4];
+var [x, y, ...rest] = arrai;
+console.log(x, y, rest);
