@@ -1,23 +1,12 @@
-function loadItem(id: number): Promise<{id: number}> {
-    return new Promise((resolve)=>{
-        console.log('loading item', id);
-        setTimeout(() => {
-            resolve({ id: id});
-        }, 1000);
-    });
+function* generator(){
+    console.log('Execution started');
+    yield 0;
+    console.log('Execution resumed');
+    yield 1;
+    console.log('Execution resumed');
 }
-let item1,item2;
-loadItem(1)
-    .then((res) => {
-        item1 = res;
-        return loadItem(2);
-    })
-    .then((res) => {
-        item2 = res;
-        console.log('done');
-    });
-Promise.all([loadItem(1),loadItem(2)])
-    .then((res) => {
-        [item1, item2] = res;
-        console.log('done')
-    });
+var iterator = generator();
+console.log('Starting iteration');
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
