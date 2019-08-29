@@ -1,13 +1,3 @@
-//function* infiniteSquence() {
-//  var i = 0;
-//while(true) {
-//  yield i++;
-//}
-//}
-//var iterator = infiniteSquence();
-//while (true){
-//  console.log(iterator.next());
-//}
 var __generator = (this && this.__generator) || function (thisArg, body) {
     var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
     return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
@@ -35,25 +25,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-function idMaker() {
-    var index;
+function generator() {
+    var bar;
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0:
-                index = 0;
-                _a.label = 1;
+            case 0: return [4 /*yield*/, 'Console log'];
             case 1:
-                if (!(index < 3)) return [3 /*break*/, 3];
-                return [4 /*yield*/, index++];
+                bar = _a.sent();
+                console.log(bar);
+                return [4 /*yield*/, 1];
             case 2:
                 _a.sent();
-                return [3 /*break*/, 1];
-            case 3: return [2 /*return*/];
+                return [2 /*return*/];
         }
     });
 }
-var gen = idMaker();
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
+var iterator = generator();
+var foo = iterator.next();
+console.log(foo.value);
+var nextThing = iterator.next('Un texto inyectado');
+console.log(nextThing);

@@ -1,21 +1,10 @@
-//function* infiniteSquence() {
-  //  var i = 0;
-    //while(true) {
-      //  yield i++;
-    //}
-//}
-//var iterator = infiniteSquence();
-//while (true){
-  //  console.log(iterator.next());
-//}
-
-function* idMaker() {
-    let index = 0;
-    while (index < 3)
-        yield index++;
+function* generator() {
+    var bar = yield 'Console log';
+    console.log(bar);
+    yield 1;
 }
-let gen = idMaker();
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
-console.log(gen.next());
+const iterator = generator();
+const foo = iterator.next();
+console.log(foo.value);
+const nextThing = iterator.next('Un texto inyectado');
+console.log(nextThing);
