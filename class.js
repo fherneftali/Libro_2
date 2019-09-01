@@ -11,26 +11,18 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Point = /** @class */ (function () {
-    function Point(x, y) {
-        this.x = x;
-        this.y = y;
+var Base = /** @class */ (function () {
+    function Base() {
     }
-    Point.prototype.add = function (point) {
-        return new Point(this.x + point.x, this.y + point.y);
-    };
-    return Point;
+    Base.prototype.log = function () { console.log('hello world'); };
+    return Base;
 }());
-var Point3D = /** @class */ (function (_super) {
-    __extends(Point3D, _super);
-    function Point3D(x, y, z) {
-        var _this = _super.call(this, x, y) || this;
-        _this.z = z;
-        return _this;
+var Child = /** @class */ (function (_super) {
+    __extends(Child, _super);
+    function Child() {
+        return _super !== null && _super.apply(this, arguments) || this;
     }
-    Point3D.prototype.add = function (point) {
-        var point2D = _super.prototype.add.call(this, point);
-        return new Point3D(point2D.x, point2D.y, this.z + point.z);
-    };
-    return Point3D;
-}(Point));
+    Child.prototype.log = function () { _super.prototype.log.call(this); };
+    ;
+    return Child;
+}(Base));
