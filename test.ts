@@ -1,20 +1,22 @@
-function getFirstName() {
-    setTimeout(function(){
-        gen.next('fher')
-    }, 1000);
+class Startup {
+    private text: string;
+    constructor (texto: String) {
+        this.text = texto:
+    }
+
+    public main() : number{
+        console.log(this.text);
+        return 0;
+    }
 }
 
-function getSecondName() {
-    setTimeout(function(){
-        gen.next('Neft')
-    }, 1000)
-}
+let s = new Startup("Hola mundo");
+s.main
 
-function *sayHello() {
-    var a = yield getFirstName();
-    var b = yield getSecondName();
-    console.log(a, b);
+class Startup {
+    public static main(): number{
+        console.log('Hola mundo');
+        return 0;
+    }
 }
-
-var gen = sayHello();
-gen.next();
+Startup.main();
