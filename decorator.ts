@@ -1,19 +1,16 @@
-function MethodDecorator (
-    target: Object,
-    propertyKey: string,
+function StaticMethodDecorator (
+    target: Function,
+    propertyKey: string | symbol,
     descriptor: TypedPropertyDescriptor<any>
 ) {
     console.log("MethodDecorator called on: ", target, propertyKey, descriptor);
 }
 
-class MethodDecoratorExample {
-    @PropertyDecorator
-    method(){
+class StaticMethodDecoratorExample {
+    @StaticMethodDecorator
+    static staticMethod(){
     }
 }
 
-MethodDecorator called on: { method: [Function] } method { value: [Function], 
-    writable: true,
-    enumerable: true,
-    configurable: true
+MethodDecorator called on: Function StaticMethodDecoratorExample()
 }
