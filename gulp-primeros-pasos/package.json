@@ -1,0 +1,15 @@
+{
+  "name": "gulp-primeros-pasos",
+  "version": "1.0.0",
+  "description": "Gulp: Primeros pasos",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Fher",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
